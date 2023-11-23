@@ -1,6 +1,4 @@
-
 import './globals.css'
-
 
 
 export default function RootLayout({
@@ -10,7 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+       <div className="page-container">
+          {children}
+        </div>
     </html>
   )
 }

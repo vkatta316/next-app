@@ -1,6 +1,28 @@
 
+import menu from "@/data/menu.js";
+import Image from 'next/image'
+
 export default function Home() {
+
   return (
-   <div>Hello World</div>
+    <>
+        <div className="content-section-title">Menu</div>
+      <div className="content-list">
+        { menu.map(item =>
+          <div className="content-item" key={item.id}>
+            <div className="content-item__image-container">
+              <Image 
+                src={item.image} 
+                objectFit="cover"
+                fill={true}
+                alt={item.name} 
+              />
+            </div>
+            <div>{item.name}</div>
+            <div>{item.description}</div>
+          </div>
+        )}
+      </div>
+    </>
   )
 }
